@@ -9,3 +9,6 @@ Brother-QL-710W
 
 Use:
 echo "2627989" | nc localhost 1236   (2627989 is the product code)
+
+![Label](label.jpeg)
+![Barcode](barcode.jpeg)
