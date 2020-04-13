@@ -25,9 +25,10 @@ while run:
         page = requests.get('http://nl.farnell.com/search?st=' + ordercode,headers=headers)
         tree = html.fromstring(page.content)
         #print(page.content)
+        component_name = tree.xpath('/html/body/div[1]/div[1]/main/div/div/div[2]/div[1]/section[1]/h1/text()')
         component_info = tree.xpath('/html/body/div[1]/div[1]/main/div/div/div[2]/div[1]/section[1]/h2/span/text()')
         print("component_info:" + component_info[0])
-        os.system("echo '" + component_info[0] + "' | glabels-3-batch --sheets=1 --copies=1 --first=1 componenten.glabels --input=- --output=printfile.ps")
+        os.system("echo '" + component_name[0] + component_info[0] + "' | glabels-3-batch --sheets=1 --copies=1 --first=1 componenten.glabels --input=- --output=printfile.ps")
         os.system("lp -d Brother-QL-710W printfile.ps")
         conn.close()
     except:
