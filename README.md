@@ -5,7 +5,7 @@ Prepare:
 sudo apt install glabels python3-lxml
 
 Tested:
-Brother-QL-710W
+Brother-QL-710W, 62mm X 30.48M label
 
 Use:
 echo "2627989" | nc localhost 1236   (2627989 is the product code)
